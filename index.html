@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <div id="user-icon">
+                    <img src="./material/user-icon.jpeg" alt="user-icon" />
+                </div>
+                <div id="logo">
+                    <img src="./material/logo.png" alt="logo" />
+                </div>
+            </header>
+            <!-- プロフィール -->
+            <div class="profile-header">
+                <div class="cover-image">
+                    <img src="./material/mv.png" alt="Cover Image" />
+                </div>
+                <div class="profile-info">
+                    <div class="profile-image">
+                        <img src="./material/icon.png" alt="Profile Picture" />
+                    </div>
+                    <div class="profile-actions">
+                        <button class="action-button">
+                            <img
+                                src="./material/share-icon-1570731-512.png"
+                                alt=""
+                            />
+                        </button>
+                        <button class="action-button">
+                            <img
+                                src="./material/email-icon-7690749-512.png"
+                                alt=""
+                            />
+                        </button>
+                        <button class="action-button">
+                            <img
+                                src="./material/notification-icon-4679166-512.png"
+                                alt=""
+                            />
+                        </button>
+                        <button class="follow-button">フォロー</button>
+                    </div>
+                    <div class="profile-name">
+                        <h1>Creator NameHere</h1>
+                        <p>@creatorid</p>
+                    </div>
+                    <div class="profile-description">
+                        <p>
+                            🔥
+                            ライブ演出とVJ映像の融合で注目の新世代アーティスト
+                        </p>
+                        <p>
+                            📩 お仕事・コラボ依頼はDMまたはinfo@creator.artまで
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 投稿 -->
+            <section id="post">
+                <h2>「気になる」を、つなげる。</h2>
+                <input
+                    type="text"
+                    id="questionTitle"
+                    placeholder="キニナル質問のタイトル"
+                />
+                <textarea
+                    name="questionText"
+                    id="questionText"
+                    placeholder="キニナル質問内容！"
+                ></textarea>
+                <div id="goal-money">
+                    <p>🔥目標金額</p>
+                    <input
+                        type="number"
+                        id="targetAmount"
+                        placeholder="¥10,000"
+                    />
+                </div>
+                <button id="send">質問投稿</button>
+            </section>
+            <section id="on-going">
+                <div class="section-logo">
+                    <img src="./material/on-going.png" alt="" />
+                </div>
+                <!-- ここに質問内容が追加される -->
+                <ul id="questions">
+                    <li
+                        class="question"
+                        data-id="${q.id}"
+                        data-text="${q.questionText}"
+                    >
+                        <div class="question-title">
+                            <p>${q.questionTitle}</p>
+                        </div>
+                        <div class="gauge">
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-bar-inner"
+                                    style="--percent: ${Math.min(
+                                        (q.currentAmount / q.targetAmount) * 100,
+                                        100
+                                    )}%;"
+                                ></div>
+                            </div>
+                            <p>¥${q.currentAmount} / ¥${q.targetAmount}</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section id="answerd">
+                <h2>Answered<br />Questions</h2>
+                <!-- ここに回答済みの質問内容が追加される -->
+                <ul id="answeredQuestions"></ul>
+            </section>
+            <footer>
+                <p>KININARU@2025</p>
+            </footer>
+        </main>
+
+        <!-- ポップアップ -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p id="popup-text"></p>
+                <input
+                    type="number"
+                    id="supportAmount"
+                    placeholder="支援する金額を入力"
+                />
+                <button id="submit-support">支援する</button>
+                <button id="close-popup">閉じる</button>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="module" src="./js/script.js"></script>
+    </body>
+</html>

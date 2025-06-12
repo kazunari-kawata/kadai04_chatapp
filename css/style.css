@@ -1,0 +1,394 @@
+/* 全般 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body {
+    display: flex;
+    justify-content: center;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", Meiryo, sans-serif;
+    background-image: url("../material/bg.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+main {
+    max-width: 430px;
+    margin: 1% auto 0;
+    background-color: white;
+    box-shadow: 0 0 30px 3px rgba(110, 90, 70, 0.7);
+    border-radius: 20px;
+}
+input,
+textarea {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    inline-size: auto;
+    word-break: break-all;
+    text-wrap: wrap;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.2);
+    resize: none;
+}
+textarea {
+    min-height: 200px;
+}
+/* ヘッダー */
+header {
+    height: 3rem;
+    display: flex;
+    position: relative;
+}
+#logo {
+    width: 7.5rem;
+    display: block;
+    margin: auto;
+    position: relative;
+}
+#logo img {
+    width: 7.5rem;
+    display: block;
+    margin: auto;
+}
+#user-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+}
+#user-icon img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+/* プロフィール */
+.profile-header {
+    position: relative;
+    width: 100%;
+    background-color: #f9f9f9;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 200px;
+    background-color: #d3d3d3;
+}
+
+.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠にフィットさせる */
+}
+
+.profile-info {
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.profile-image {
+    position: absolute;
+    top: -3rem;
+    left: 15%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-actions {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+}
+button:hover {
+    background-color: #ececec;
+}
+.action-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #ececec;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0.3rem 0.3rem;
+    transition: background-color 0.3s ease;
+}
+button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.action-button img:hover {
+    background-color: #ececec;
+}
+.follow-button {
+    width: 6rem;
+    height: 2rem;
+    background-color: #ff8a46;
+    border: none;
+    border-radius: 30px;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.follow-button:hover {
+    background-color: #e6733f; /* ホバー時に色を少し暗く */
+}
+.profile-name {
+    text-align: left;
+    left: 15%;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #333;
+}
+.profile-name p {
+    margin: 0;
+    color: gray;
+    font-size: 0.75rem;
+}
+.profile-description {
+    margin-top: 10px;
+    text-align: left;
+    left: 15%;
+}
+.profile-description p {
+    color: black;
+    font-size: 0.8rem;
+}
+/* 投稿 */
+#post {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: #ff8a46;
+    padding: 30px;
+}
+#post h2 {
+    font-size: 1.2rem;
+    margin: 0 auto 30px;
+}
+#post input,
+textarea,
+#goal-money {
+    width: 100%;
+    border-radius: 5px;
+}
+#questionTitle,
+#targetAmount {
+    height: 30px;
+}
+#questionTitle,
+#questionText,
+#goal-money {
+    margin-bottom: 10px;
+}
+#post input::placeholder {
+    text-indent: 10px;
+}
+#post textarea::placeholder {
+    text-indent: 10px;
+    padding-top: 10px;
+}
+#goal-money input {
+    text-align: right;
+}
+#goal-money input::placeholder {
+    text-align: right;
+    margin-right: 10px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#goal-money {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+#goal-money p {
+    width: 100%;
+    text-align: end;
+    margin-right: 10px;
+}
+.questionText {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(110, 90, 70, 0.3);
+}
+#send {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-weight: 550;
+    transition: 0.4s ease;
+    background-color: white;
+}
+#send:hover {
+    background-color: black;
+    color: white;
+}
+/* アクティブな質問群 */
+.section-logo {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+#on-going {
+    margin-bottom: 20px;
+}
+#on-going img {
+    width: 12.5rem;
+}
+#questions {
+    min-height: 300px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid rgb(241, 241, 241);
+    box-shadow: 3px 3px 10px;
+    box-shadow: 3px 3px 10px rgba(110, 90, 70, 0.3);
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease;
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+.question:hover {
+    transform: scale(1.03);
+    background-color: rgb(255, 240, 227);
+}
+.question-title {
+    width: 100%;
+    line-height: 100%;
+    text-align: start;
+    margin: 20px 0 10px 20px;
+}
+.gauge {
+    width: 90%;
+    margin: 0 auto;
+}
+.question-support {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.question-support button {
+    width: 6rem;
+    height: 1.8rem;
+    background-color: #ff8a46;
+    border: none;
+    border-radius: 30px;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.question-support button:hover {
+    background-color: #e6733f;
+}
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.progress-bar-inner {
+    width: var(--percent);
+    height: 100%;
+    background-color: #ff8a46;
+    transition: width 0.3s ease;
+}
+.support-button {
+    z-index: 2000;
+}
+/* 回答済みの答え */
+#answerd {
+    background-color: rgb(234, 233, 233);
+}
+#answerd h2 {
+    text-align: center;
+    padding: 20px;
+}
+/* フッター */
+footer {
+    height: 3rem;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 0 0 20px 20px;
+}
+/* ポップアップ */
+.popup {
+    max-width: 400px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#supportAmount {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#submit-support {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ff8a46;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
