@@ -34,3 +34,5 @@ YouTubeなどのライブ配信で投げ銭文化が浸透している様子か�
 新しいかたちの関係性が築けると信じています。
 
  ![課題スクショ](https://github.com/user-attachments/assets/cb6f903b-85b2-4687-a2b2-563615c3ab23)
+ ![Service_wireframes](https://github.com/user-attachments/assets/11672232-bed0-4830-81ac-e72900e9ac6f)
+
